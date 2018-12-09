@@ -10,13 +10,13 @@ describe('Our first test', () =>{
 
 //test using jsdom
 describe('index.html', () => {
-  it('should say hello', (done) => {
+  it('should have h1 that says Users', (done) => {
     //content of index.html hold in memory
     const index = fs.readFileSync('./src/index.html', "utf-8");
     // create a virtula DOM in mmeory
     jsdom.env(index, function(err, window){
       const h1 = window.document.getElementsByTagName('h1')[0];
-      expect(h1.innerHTML).to.equal("Hello Mariana");
+      expect(h1.innerHTML).to.equal("Users");
       done();
       window.close();
     })
