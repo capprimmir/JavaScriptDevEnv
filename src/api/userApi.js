@@ -1,5 +1,4 @@
 import 'whatwg-fetch';
-import { get } from 'https';
 
 export function getUsers(){
   return get('users');
